@@ -27,11 +27,6 @@ public class HomeController {
     private List<User> users = new ArrayList<User>();
     private Data userData = new Data();
 
-//    @RequestMapping("home")
-//    public ModelAndView home() {
-//        return new ModelAndView("pages/index");
-//
-//    }
 
     @RequestMapping(value="/login", method = RequestMethod.GET )
     public ModelAndView login() {
@@ -50,8 +45,6 @@ public class HomeController {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
         System.out.println(items);
-//        items.setCurrent_page(data.getCurrent_page());
-//        String name = data;
 
         return new ModelAndView("addUsers");
 
@@ -207,13 +200,5 @@ public class HomeController {
 
     }
 
-//    @RequestMapping(value="/chat{user}", method = RequestMethod.GET )
-//    public ModelAndView chat(@PathVariable("user")String user, ModelMap model) {
-//
-////        String user = "user3";
-//        model.addAttribute("user","user3");
-//        return new ModelAndView("chat");
-//
-//    }
 
 }
