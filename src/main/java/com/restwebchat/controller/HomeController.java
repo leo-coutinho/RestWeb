@@ -98,13 +98,7 @@ public class HomeController {
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
-//        System.out.println(users);
-//        items.setCurrent_page(data.getCurrent_page());
-//        String name = data;
-//        getDialogUser("LeoC");
-//        return new ModelAndView("chatNew");
         return new ModelAndView("getDialogUser");
-//        return getDialogUser("LeoC");
 
     }
 
