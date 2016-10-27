@@ -1,0 +1,8 @@
+Not in use -->http://localhost:8080/RestWebChat/loginUser/arelc@vouchfor.com.au/ --> logins in users passing their user id.
+Not in Use -->http://localhost:8080/RestWebChat/chatNew/user3  --> Call chat with user id
+
+To start chatting use the follow url:
+http://localhost:8080/RestWebChat/getUser/loginUserName/
+
+To Add New Users
+http://localhost:8080/RestWebChat/addUsers/add
