@@ -187,11 +187,13 @@ function setupUsersScrollHandler(){
     if  ($('.list-group.pre-scrollable.for-scroll').scrollTop() == $('#users_list').height() - $('.list-group.pre-scrollable.for-scroll').height()){
 
       // get and show User
-      retrieveUsersForDialogCreation(function(users) {
-        $.each(users, function(index, item){
-          showUsers(this.user.login, this.user.id);
-        });
-      });
+      showUsers(this.user.login, this.user.id);
+      // retrieveUsersForDialogCreation(function(users) {
+      //
+      //   // $.each(users, function(index, item){
+      //   //   showUsers(this.user.login, this.user.id);
+      //   // });
+      // });
     }
   });
 }
@@ -199,8 +201,10 @@ function setupUsersScrollHandler(){
 //
 function showUsers(userLogin, userId) {
   // alert("ShowUsers");
-  var userHtml = buildUserHtml(userLogin, userId, false);
-  // alert(JSON.stringify(userHtml));
+  // var userHtml = buildUserHtml(userLogin, userId, false);
+  var userHtml = buildUserHtml('LeoC', '16464030', false);
+  alert("userHTML gets appended to usersList");
+   alert(JSON.stringify(userHtml));
   $('#users_list').append(userHtml);
 }
 
@@ -210,14 +214,14 @@ function showNewDialogPopup() {
   $('#add_new_dialog .progress').hide();
 
   // get and show User
-  retrieveUsersForDialogCreation(function(users) {
-    if(users === null || users.length === 0){
-      return;
-    }
-    $.each(users, function(index, item){
-      showUsers(this.user.login, this.user.id);
-    });
-  });
+  // retrieveUsersForDialogCreation(function(users) {
+  //   if(users === null || users.length === 0){
+  //     return;
+  //   }
+    // $.each(users, function(index, item){
+    //   showUsers(this.user.login, this.user.id);
+    // });
+  // });
 
   setupUsersScrollHandler();
 }
@@ -257,11 +261,14 @@ function createUserDialog(userId,userName) {
     type: 3,
     occupants_ids: [userId]
   };
-
+alert(JSON.stringify(params));
   QB.chat.dialog.create(params, function(err, createdDialog) {
+    alert("Create dialog");
     if (err) {
+      alert(JSON.stringify(err));
       console.log(err);
     } else {
+      alert("else");
     }
   });
 
@@ -296,7 +303,7 @@ function createNewDialog() {
     dialogOccupants = usersIds;
     dialogType = 2;
   } else {
-    dialogOccupants = usersIds;
+    dialogOccupants = '16464030';
     dialogType = 3;
   }
 
@@ -309,7 +316,7 @@ function createNewDialog() {
   // create a dialog
   //
   console.log("Creating a dialog with params: " + JSON.stringify(params));
-  alert("Creating Dialog with users");
+  alert('Creating Dialog with users');
   alert(JSON.stringify(params));
 
   QB.chat.dialog.create(params, function(err, createdDialog) {

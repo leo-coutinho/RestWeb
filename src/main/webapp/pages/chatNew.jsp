@@ -32,7 +32,7 @@
             <li class="active"><a href="#">Chat</a></li>
             <li><a href="#" onclick="showNewDialogPopup()">Create dialog</a></li>
             <li><a href="#" onclick="showDialogInfoPopup()">Dialog info</a></li>
-            <li><a href="#" onclick="createUserDialog(${secId},${secname})">1 to 1 Chat</a></li>
+            <li><a href="#" onclick="buildUserHtml('LeoC', '16464030', false)">1 to 1 latest Chat</a></li>
           </ul>
             <%--<button type="button" value="Confirm" id="" class="btn btn-success btn-lg btn-block" onclick="createUserDialog().click();">Create Userr dialog</button>--%>
           <%--<a href="https://github.com/QuickBlox/quickblox-javascript-sdk/tree/gh-pages/samples/chat"--%>
@@ -144,9 +144,9 @@
             </div>
             <div class="img-place"><img src="${pageContext.request.contextPath}/resources/images/ajax-loader.gif" id="load-users"></div>
               <input type="text" class="form-control" id="dlg_name" placeholder="Enter dialog name">
-              <button id="add-dialog" type="button" value="Confirm" id="" class="btn btn-success btn-lg btn-block" onclick="createUserDialog('16464030','LeoC')">Create dialog</button>
+              <%--<button id="add-dialog" type="button" value="Confirm" id="" class="btn btn-success btn-lg btn-block" onclick="createUserDialog('16464030','LeoC')">Create dialog</button>--%>
               <%--<button id="add-dialog" type="button" value="Confirm" id="" class="btn btn-success btn-lg btn-block" onclick="createUserDialog(${secId},${secname})">Create dialog</button>--%>
-              <%--<button id="add-dialog" type="button" value="Confirm" id="" class="btn btn-success btn-lg btn-block" onclick="createNewDialog()">Create dialog</button>--%>
+              <button id="add-dialog" type="button" value="Confirm" id="" class="btn btn-success btn-lg btn-block" onclick="createNewDialog()">Create dialog</button>
             <div class="progress">
               <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
               </div>

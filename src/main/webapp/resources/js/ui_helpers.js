@@ -74,6 +74,10 @@ function buildTypingUserHtml(userId, userLogin) {
 
 // build html for User list
 function buildUserHtml(userLogin, userId, isNew) {
+    alert('UserLogin');
+    alert(JSON.stringify(userLogin));
+    alert(JSON.stringify(userId));
+    alert(JSON.stringify(isNew));
   var userHtml = "<a href='#' id='" + userId;
   if(isNew){
     userHtml += "_new'";
