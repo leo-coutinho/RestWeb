@@ -26,6 +26,7 @@ public class HomeController {
 //    @Autowired
     private List<User> users = new ArrayList<User>();
     private Data userData = new Data();
+    private SecUser secLogUser = new SecUser();
 
 
     @RequestMapping(value="/login", method = RequestMethod.GET )
@@ -122,7 +123,7 @@ public class HomeController {
         model.addObject("pass","vouchfor00");
 
         model.addObject("secuser","");
-        model.addObject("id",chatUserId);
+        model.addObject("secId",chatUserId);
         model.addObject("secname","");
         model.addObject("seclogin",chatLogin);
         model.addObject("secpass","vouchfor00");
@@ -162,7 +163,8 @@ public class HomeController {
 
         String password = "vouchfor00";
         ModelAndView model = new ModelAndView("getDialogUser");
-        model.addObject("userLogin","Leo Coutinho");
+//        model.addObject("userLogin","Leo Coutinho");
+        model.addObject("userLogin",secLogUser.getSecUserName());
 //        model.addObject("usr_sgn_n_pwd",password);
         return model;
 
@@ -172,6 +174,19 @@ public class HomeController {
     public ModelAndView getUser(@PathVariable String user) {
 
         String password = "vouchfor00";
+        ModelAndView model = new ModelAndView("getUser");
+        model.addObject("userLogin",user);
+//        model.addObject("usr_sgn_n_pwd",password);
+        return model;
+
+    }
+
+
+    @RequestMapping(value="/getChatUser/{user}/{secUser}/", method = RequestMethod.GET )
+    public ModelAndView getChatUser(@PathVariable String user, @PathVariable String secUser) {
+
+        String password = "vouchfor00";
+        secLogUser.setSecUserName(secUser);
         ModelAndView model = new ModelAndView("getUser");
         model.addObject("userLogin",user);
 //        model.addObject("usr_sgn_n_pwd",password);

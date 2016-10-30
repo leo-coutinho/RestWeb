@@ -281,7 +281,10 @@ alert(JSON.stringify(params));
 function createNewDialog() {
   var usersIds = [];
   var usersNames = [];
-  alert("Creating Dialog with users");
+  alert("Creating Dialog with busers");
+  alert("Next alert is secId value");
+  alert(document.getElementById('secId').value);
+
   $('#users_list .users_form.active').each(function(index) {
     usersIds[index] = $(this).attr('id');
     usersNames[index] = $(this).text();
@@ -303,7 +306,10 @@ function createNewDialog() {
     dialogOccupants = usersIds;
     dialogType = 2;
   } else {
-    dialogOccupants = '16464030';
+    alert("Next alert is secId value");
+    alert(document.getElementById('secId').value);
+    dialogOccupants = document.getElementById('secId').value;
+    // dialogOccupants = '16464030';
     dialogType = 3;
   }
 
@@ -316,7 +322,9 @@ function createNewDialog() {
   // create a dialog
   //
   console.log("Creating a dialog with params: " + JSON.stringify(params));
-  alert('Creating Dialog with users');
+  alert('Creating Dialog with lusers');
+    alert("Next alert is secId value");
+    alert(document.getElementById('secId').value);
   alert(JSON.stringify(params));
 
   QB.chat.dialog.create(params, function(err, createdDialog) {

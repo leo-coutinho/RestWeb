@@ -74,6 +74,10 @@ function buildTypingUserHtml(userId, userLogin) {
 
 // build html for User list
 function buildUserHtml(userLogin, userId, isNew) {
+
+    alert(document.getElementById('secId').value);
+    var secId = document.getElementById('secId').value;
+    alert(JSON.stringify(secId));
     alert('UserLogin');
     alert(JSON.stringify(userLogin));
     alert(JSON.stringify(userId));
